@@ -2,11 +2,18 @@ server:
   port: 1234
 
 spring:
+    thymeleaf:
+        encoding: utf-8
+        cache: false
+        servlet:
+          content-type: text/html
     datasource:
         name: test
         url: jdbc:mysql://localhost:3306/test
-        username:
-        password:
+        username: root
+        password: 123456
+    messages:
+      basename: i18n.login
 
 ## 该配置节点为独立的节点，有很多同学容易将这个配置放在spring的节点下，导致配置无法被识别
 mybatis:

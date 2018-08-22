@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.hms.mapper.RoomMapper">
+    <select id="selectAllRooms" resultType="com.example.hms.model.Room">
+    select * from tb_room;
+</select>
+    <!--查询url-->
+    <select id="selectImageUrls" resultType="java.lang.String">
+        select image from tb_room_images where roomId = #{roomId}
+    </select>
+    <update id="insertRoom">
+        insert into tb_room (rno,floor,area,direct,sofa,tv,price,valid)
+        value(#{rno},#{floor},#{area},#{direct},#{sofa},#{tv},#{price},#{valid})
+    </update>
+    <update id="batchInsertImageUrls">
+        INSERT  INTO tb_room_images (roomId,image)
+        values
+        <foreach collection="images"  separator="," item="image">
+            (#{roomId},#{image})
+        </foreach>
+    </update>
+</mapper>

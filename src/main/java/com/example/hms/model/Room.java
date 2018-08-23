@@ -18,4 +18,7 @@ public class Room {
     private int tv;
     private double price;
     private int valid;
+    private int feedbackNumbers;
+    private int customerNumbers;
+    private int grade;
 }

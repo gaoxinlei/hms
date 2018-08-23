@@ -40,4 +40,9 @@ public class RoomServiceImpl implements RoomService{
             roomMapper.batchInsertImageUrls(room.getId(),images);
         }
     }
+
+    @Override
+    public Room getRoom(int roomId) {
+        return roomMapper.selectRoomById(roomId);
+    }
 }

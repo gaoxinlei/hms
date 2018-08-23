@@ -19,4 +19,10 @@
             (#{roomId},#{image})
         </foreach>
     </update>
+    <select id="selectRoomById" resultType="com.example.hms.model.Room">
+        select * from tb_room where id = #{id}
+    </select>
+    <update id="changeStatus">
+        update tb_room set valid = #{status} where rno = #{rno}
+    </update>
 </mapper>

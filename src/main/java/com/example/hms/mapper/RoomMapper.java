@@ -13,4 +13,8 @@ public interface RoomMapper {
     int insertRoom(Room room);
 
     int batchInsertImageUrls(int roomId,@Param("images") List<String> images);
+
+    Room selectRoomById(Integer id);
+
+    int changeStatus(@Param("rno") String rno, @Param("status") Integer status);
 }

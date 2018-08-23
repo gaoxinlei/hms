@@ -9,4 +9,6 @@ public interface RoomService {
     List<Room> getAllRooms();
 
     void addRoom(Room room);
+
+    Room getRoom(int roomId);
 }
